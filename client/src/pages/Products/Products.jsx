@@ -5,16 +5,12 @@ import CircularProgress from "@mui/material/CircularProgress";
 
 const Products = () => {
   const [productInfo, setProductInfo] = useState();
-  const { productId } = useParams();
+  const { productId } = useParams(); //hook from react-router-dom lets us easily read URL Params
 
   useEffect(() => {
-    const fetchProduct = async () => {
-      const results = await productsApi.getProductById(productId);
-      setProductInfo(results);
-    };
-    if (!productInfo) {
-      fetchProduct();
-    }
+    //1.) create an arrow function named fetchProduct
+    //    -should use getProductById function from productsApi
+    //2.) call fetchProduct if our 'productInfo' state is empty
   }, []);
 
   return (

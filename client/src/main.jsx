@@ -8,7 +8,7 @@ import Products from "./pages/Products/Products";
 const routes = [
   { path: "/", element: <Home /> },
   {
-    path: "/products/:productId",
+    path: "/products/:productId", //:productId is a variable path
     element: <Products />,
   },
 ];

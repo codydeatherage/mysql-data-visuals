@@ -7,14 +7,9 @@ const Home = () => {
   const [products, setProducts] = useState();
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      const results = await productsApi.getProducts();
-      //setTimeout just so we can see spinner
-      setTimeout(() => setProducts(results), 1000);
-    };
-    if (!products) {
-      fetchProducts();
-    }
+    //1.) create an arrow function named fetchProducts
+    //    -should use getProducts function from productsApi
+    //2.) call fetchProducts if our 'products' state is empty
   }, []);
 
   return (

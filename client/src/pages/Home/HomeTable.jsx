@@ -16,9 +16,8 @@ const HomeTable = ({ products }) => {
 
   const filteredProducts = useMemo(() => {
     if (searchText) {
-      return products.filter((product) =>
-        product.productName.toLowerCase().includes(searchText.toLowerCase())
-      );
+      //1.) should return a filtered version of 'products', containing only entries that include
+      //    some portion of the 'searchText'
     }
     return products;
   }, [searchText]);
@@ -40,7 +39,7 @@ const HomeTable = ({ products }) => {
         <thead>
           <tr>
             {headers.map((header, index) => (
-              <th key={index}>{header}</th>
+              <th key={index}>{header}</th> //elements returned from a map() should include a unique 'key' prop
             ))}
           </tr>
         </thead>
